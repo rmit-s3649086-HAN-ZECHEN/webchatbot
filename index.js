@@ -1,9 +1,13 @@
 const express = require('express');
+const bodyParser = require('body-parser');
+
 const app = express();
 
-app.get('/', (req, res) => {
-    res.send("welcome to home page han!");
-});
+app.use(bodyParser.json());
+
+require('./routes/dialogFlowRoutes')(app);
+
+
 
 const server = app.listen(process.env.PORT || 3000, () => {
     const host = server.address().address;
