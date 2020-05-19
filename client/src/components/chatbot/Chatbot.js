@@ -100,7 +100,7 @@ class Chatbot extends Component {
         }
 
     };
-    
+
 //a pause between messages
     resolveAfterXSeconds(x) {
         return new Promise(resolve => {
