@@ -101,6 +101,7 @@ class Chatbot extends Component {
 
     };
 
+
 //a pause between messages
     resolveAfterXSeconds(x) {
         return new Promise(resolve => {
@@ -116,7 +117,7 @@ class Chatbot extends Component {
         if (window.location.pathname === '/shop' && !this.state.shopWelcomeSent) {
             await this.resolveAfterXSeconds(1);
             this.df_event_query('WELCOME_SHOP');
-            this.setState({ shopWelcomeSent: true, showBot: true});
+            this.setState({ shopWelcomeSent: true, showBot: true });
         }
 
         this.props.history.listen(() => {
@@ -160,7 +161,6 @@ class Chatbot extends Component {
                 default:
                 this.df_text_query(text);
                 break;
-
         }
     }
 
